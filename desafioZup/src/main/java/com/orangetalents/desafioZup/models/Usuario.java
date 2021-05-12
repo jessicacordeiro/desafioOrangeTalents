@@ -25,11 +25,13 @@ public class Usuario {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
+	@Column(name = "nome", unique = true)
 	private String nome;
 	
 	@Email
 	@NotBlank
-	@Column(name = "nome", unique = true)
+	@Column(name = "email", unique = true)
 	private String email;
 	
 	@CPF
