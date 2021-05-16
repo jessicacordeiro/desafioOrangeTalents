@@ -26,7 +26,6 @@ public class Usuario {
 	private Long id;
 	
 	@NotBlank
-	@Column(name = "nome", unique = true)
 	private String nome;
 	
 	@Email

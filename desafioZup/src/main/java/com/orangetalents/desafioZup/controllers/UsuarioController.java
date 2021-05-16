@@ -35,7 +35,7 @@ public class UsuarioController {
 	public ResponseEntity<?> novoEndereco (@PathVariable(value = "id_Usuario") Long idUsuario, @Valid @RequestBody Endereco novoEndereco) {
 			Endereco cadastro = usuarioService.cadastrarEndereco(novoEndereco, idUsuario);
 			if(cadastro == null) {
-				return new ResponseEntity<String>("Falha ao realizar o cadastro", HttpStatus.NO_CONTENT);
+				return new ResponseEntity<String>("Falha ao realizar o cadastro, tente novamente.", HttpStatus.NO_CONTENT);
 			}
 			return new ResponseEntity<Endereco>(cadastro, HttpStatus.CREATED);
 	}
